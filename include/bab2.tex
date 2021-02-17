@@ -1,4 +1,108 @@
 \chapter{TINJAUAN PUSTAKA}
 
+\section{Internet of Things (IOT)}
+\begin{afigure} 
+    \includegraphics[width=0.85\textwidth, center]{images/iot.jpeg}
+    \caption{Internet of Things}
+    \label{fig:iot}
+\end{afigure}
 
-\section{Landasan Teori}
+\textit{Internet of Things} adalah skenario dari suatu objek yang dapat melakukan suatu pengiriman data/informasi melalui jaringan tanpa campur tangan manusia. \textit{IoT} sangat erat hubungannya dengan komunikasi mesin ke mesin (M2M) tanpa campur tangan manusia ataupun komputer yang lebih dikenal dengan istilah cerdas \textit{(smart)} \thecite{limantara2017a}.
+
+Cara Kerja \textit{Internet of Things} yaitu dengan memanfaatkan sebuah argumentasi pemrograman yang dimana tiap-tiap perintah argumennya itu menghasilkan sebuah interaksi antara sesama mesin yang terhubung secara otomatis tanpa campur tangan manusia dan dalam jarak berapa pun. Internetlah yang menjadi penghubung di antara kedua interaksi mesin tersebut, sementara manusia hanya bertugas sebagai pengatur dan pengawas bekerjanya alat tersebut secara langsung.Tantangan terbesar dalam mengkonfigurasi \textit{Internet of Things} ialah menyusun jaringan komunikasinya sendiri, yang dimana jaringan tersebut sangatlah kompleks, dan memerlukan sistem keamanan yang ketat. Selain itu biaya yang mahal sering menjadi penyebab kegagalan yang berujung pada gagalnya produksi.
+
+Metode yang digunakan oleh \textit{Internet of Things} adalah nirkabel atau pengendalian secara otomatis tanpa mengenal jarak. Pengimplementasian \textit{Internet of Things} sendiri biasanya selalu mengikuti keinginan si developer dalam mengembangkan sebuah aplikasi yang ia ciptakan, apabila aplikasinya itu diciptakan guna membantu monitoring sebuah ruangan maka pengimplementasian \textit{Internet of Things} itu sendiri harus mengikuti alur diagram pemrograman mengenai sensor dalam sebuah rumah, berapa jauh jarak agar ruangan dapat dikontrol, dan kecepatan jaringan internet yang digunakan
+
+Banyak manfaat yang didapatkan dari \textit{Internet of Things}. Pekerjaan yang kita lakukan menjadi cepat, mudah, dan efisien. Kemunculan \textit{Internet Of Things} \textit{(IoT)} memungkinkan perangkat komputer secara otomatis dapat melakukan kontrol terhadap suatu sistem dan memungkinkan pula untuk memberi aksi ke sistem terhadap kejadian yang terjadi pada sistem yang dikontrol secara realtime \thecite{ichwana2018a}.
+
+\section{Automatic License Plate Recognition (ALPR)}
+\textit{Automatic License Plate Recognition} adalah teknologi yang menggunakan pengenalan karakter pada gambar untuk membaca plat registrasi kendaraan. ALPR digunakan oleh polisi di beberapa negara di dunia untuk tujuan penegakan hukum, termasuk untuk memeriksa apakah kendaraan terdaftar atau tidak.
+
+Pengenalan plat nomor otomatis dapat digunakan untuk menyimpan gambar yang diambil oleh kamera serta teks dari plat nomor. Umumnya sistem menggunakan pencahayaan inframerah untuk memungkinkan kamera mengambil gambar kapan saja, siang atau malam hari. Selain itu, teknologi ALPR juga harus memperhitungkan variasi nomor plat dari suatu negara karena bentuk dan ukuran nomor plat di satu negara dengan negara lainnya kemungkinan sangat berbeda.
+
+ALPR menjadi tren baru dalam otomatisasi sistem transportasi. Pencatatan pelat nomor kendaraan bisa dilakukan tanpa campur tangan manusia. Meskipun teknologi tersebut telah ditetapkan di negara-negara maju, negara-negara berkembang seperti Indonesia belum menerapkan teknologi tersebut karena berbagai alasan \thecite{budianto2018a}.
+
+\section{Raspberry Pi}
+Raspberry Pi adalah komputer mini yang dirancang dan diproduksi di Inggris dengan tujuan awal untuk menyediakan perangkat komputasi yang murah untuk pendidikan. Raspberry Pi ditemukan pertama kali di University of Cambridge laboratory pada tahun 2006. Raspberry Pi dirilis secara komersial pada februari 2012. Sejak saat itu \textit{board} Raspberry Pi telah melalui sejumlah revisi dan tersedia dalam 2 model yaitu model A dan model B \thecite{wicaksono2018a}.
+
+Secara kasar ditengah semua model Raspberry Pi terdapat sebuah semikonduktor persegi atau yang dikenal sebagai \textit{integrated circuit} atau \textit{chip}. \textit{Integrated Circuit} adalah \textit{sistem-on-chip} modul yang menyediakan kemampuan untuk pemrosesan umum \textit{(general purpose)}, render grafis, dan \textit{input/output} \thecite{wicaksono2018a}.
+
+\begin{afigure} 
+    \includegraphics[width=0.85\textwidth, center]{images/raspberry pi 3b.jpg}
+    \caption{Raspberry Pi model 3B}
+    \label{fig:Raspberry3B}
+\end{afigure}
+
+Raspberry pi 3 adalah model terbaru Raspberry Pi. Raspberry Pi 3 menggunakan \textit{processor} terbaru yaitu Broadcom BCM283764 bit. BCM283764 lebih cepat dari pada BCM2836. Raspberry Pi 3 juga merupakan model pertama yang memiliki \textit{built-in wireless} (mampu terhubung ke jaringan WIFI dan juga memiliki perangkat \textit{Bluetooth}). Raspberry Pi model 3B bisa dilihat pada gambar ~\ref{fig:Raspberry3B}. Berikut merupakan spesifikasi dari Raspberry Pi 3 :
+
+\begin{itemize}[topsep=0pt,itemsep=0pt,partopsep=0pt, parsep=0pt,]
+    \item SoC: Broadcom BCM2837
+    \item CPU: 4x ARM Cortex-A53, 1.2GHz
+    \item GPU: Broadcom VideoCore IV
+    \item RAM: 1GB LPDDR2 (900 MHz)
+    \item Networking: 10/100 Ethernet, 2.4GHz 802.11n wireless
+    \item Bluetooth: Bluetooth 4.1 Classic, Bluetooth Low Energy
+    \item Storage: microSD
+    \item GPIO: 40-pin header
+    \item Ports: HDMI, 3.5mm analogue audio-video jack, 4x USB 2.0, Ethernet, CameraSerial Interface (CSI), Display Serial Interface (DSI)
+\end{itemize}
+
+\section{Module Sensor}
+Sensor adalah sesuatu yang digunakan untuk mendeteksi adanya perubahan lingkungan fisik atau kimia.
+
+\subsection{RFID MFRC522}
+\textit{Radio Frequency Identification} (RFID) adalah teknologi untuk mengidentifkasi dan mengendalikan data dari jarak jauh menggunakan transmisi gelombang radio. RFID menggunakan sarana transponder atau RFID tag untuk menyimpan dan mengambil data dari jarak jauh. RFID tag mirip denganp penggunaan barcode yang melekat pada sebuah objek yang menyimpan identifikasi data obyek \thecite{singgeta2018a}.
+
+RFID mempunyai 2 bagian komponen utama yang tak dapat dipisahkan, yaitu:
+\begin{enumerate}[topsep=0pt,itemsep=0pt,partopsep=0pt, parsep=0pt]
+    \item RFID Tag
+    
+    Merupakan sebuah perangkat yang akan diidentifikasi oleh RFID \textit{reader} yang dapat berupa perangkat pasif maupun aktif yang berisi suatu data atau informasi. Tag RFID, dapat berupa stiker, kertas atau plastik dengan beragam ukuran . Di dalam setiap tag ini terdapat chip yang mampu menyimpan sejumlah informasi tertentu. RFID Tag berfungsi sebagai transponder (transmitter dan responder) yang berisikan data dengan menggunakan frekuensi 125 KHz.RFID tag bisa dilihat pada gambar ~\ref{fig:rfidTag} 
+
+    \begin{afigure} 
+        \includegraphics[width=0.85\textwidth, center]{images/rfidTag.jpg}
+        \caption{RFID Tag}
+        \label{fig:rfidTag}
+    \end{afigure}
+
+    Pada RFID tag terdapat 2 jenis yaitu \textit{Read-Write} dan \textit{Only Read}. Selain itu RFID tag mempunyai 2 komponen utama yang penting, antara lain:
+
+    \begin{itemize}[topsep=0pt,itemsep=0pt,partopsep=0pt, parsep=0pt,]
+        \item IC (\textit{Integrated Circuit}) : berfungsi sebagai pemproses informasi, modulasi serta demodulasi sinyal RF, yang beroperasi dengan catudaya DC.
+        \item ANTENNA : mempunyai fungsi untuk mengirim maupun menerima sinyal RF.
+    \end{itemize}
+
+    \item RFID \textit{Reader}
+    
+    Berfungsi untuk membaca data dari RFID Tag. RFID \textit{Reader} dibedakan menjadi 2 macam, antara lain :
+    \begin{itemize}[topsep=0pt,itemsep=0pt,partopsep=0pt, parsep=0pt,]
+        \item Pasif : hanya bisa membaca data dari RFID tag aktif
+        \item Aktif : dapat membaca data RFID tag pasif
+    \end{itemize}
+\end{enumerate}
+
+\subsection{HC-SR04}
+Sensor ultrasonik adalah sebuah sensor yang mengubah besaran fisis berupa bunyi menjadi besaran listrik dan sebaliknya. Cara kerja sensor ini didasarkan pada prinsip dari pantulan suatu gelombang suara sehingga dapat dipakai untuk menafsirkan jarak suatu benda dengan frekuensi tertentu. Disebut sebagai sensor ultrasonik karena sensor ini menggunakan gelombang ultrasonik (bunyi ultrasonik). Bunyi ultrasonik bisa merambat melalui zat padat, cair dan gas. Reflektivitas bunyi ultrasonik di permukaan zat padat hampir sama dengan reflektivitas bunyi ultrasonik di permukaan zat cair. Akan tetapi, gelombang bunyi ultrasonik akan diserap oleh tekstil dan busa.
+
+\begin{afigure} 
+    \includegraphics[width=0.85\textwidth, center]{images/cara kerja ultrasonik.png}
+    \caption{Cara Kerja Sensor Ultrasonik}
+    \label{fig:caraKerjaUltrasonic}
+\end{afigure}
+
+Secara umum, alat ini akan menembakkan gelombang ultrasonik menuju suatu area atau suatu target. Setelah gelombang menyentuh permukaan target, maka target akan memantulkan kembali gelombang tersebut. Gelombang pantulan dari target akan ditangkap oleh sensor, kemudian sensor menghitung selisih antara waktu pengiriman gelombang dan waktu gelombang pantul diterima \thecite{limantara2017a}. Ilustrasinya bisa dilihat pada gambar ~\ref{fig:caraKerjaUltrasonic}.
+
+\begin{figure} [H]
+    \includegraphics[width=0.85\textwidth, center]{images/ultrasonik.jpg}
+    \caption{Sensor Ultrasonik}
+    \label{fig:Sensor Ultrasonic HC-SR04}
+\end{figure}
+
+HC-SR04 merupakan sensor ultrasonik yang berfungsi sebagai pengirim, penerima, dan pengontrol gelombang ultrasonik. Alat ini bisa digunakan untuk mengukur jarak benda dari 2cm-4m dengan akurasi 3mm. Alat ini memiliki 4 pin, pin Vcc, Gnd, Trigger, dan Echo. Pin Vcc untuk listrik positif dan Gnd untuk ground-nya. Pin Trigger untuk trigger keluarnya sinyal dari sensor dan pin Echo untuk menangkap sinyal pantul dari benda.
+
+\subsection{SG90}
+
+\subsection{Kamera Raspberry Pi v2}
+
+\subsection{API, REST API, dan RESTful API}
+
