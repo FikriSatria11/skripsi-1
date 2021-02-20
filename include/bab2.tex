@@ -57,7 +57,7 @@ RFID mempunyai 2 bagian komponen utama yang tak dapat dipisahkan, yaitu:
 \begin{enumerate}[topsep=0pt,itemsep=0pt,partopsep=0pt, parsep=0pt]
     \item RFID Tag
     
-    Merupakan sebuah perangkat yang akan diidentifikasi oleh RFID \textit{reader} yang dapat berupa perangkat pasif maupun aktif yang berisi suatu data atau informasi. Tag RFID, dapat berupa stiker, kertas atau plastik dengan beragam ukuran . Di dalam setiap tag ini terdapat chip yang mampu menyimpan sejumlah informasi tertentu. RFID Tag berfungsi sebagai transponder (transmitter dan responder) yang berisikan data dengan menggunakan frekuensi 125 KHz.RFID tag bisa dilihat pada gambar ~\ref{fig:rfidTag} 
+    Merupakan sebuah perangkat yang akan diidentifikasi oleh RFID \textit{reader} yang dapat berupa perangkat pasif maupun aktif yang berisi suatu data atau informasi. Tag RFID, dapat berupa stiker, kertas atau plastik dengan beragam ukuran . Di dalam setiap tag ini terdapat chip yang mampu menyimpan sejumlah informasi tertentu. RFID Tag berfungsi sebagai transponder (transmitter dan responder) yang berisikan data dengan menggunakan frekuensi 125 KHz. RFID tag bisa dilihat pada gambar ~\ref{fig:rfidTag} 
 
     \begin{afigure} 
         \includegraphics[width=0.85\textwidth, center]{images/rfidTag.jpg}
@@ -95,14 +95,31 @@ Secara umum, alat ini akan menembakkan gelombang ultrasonik menuju suatu area at
 \begin{figure} [H]
     \includegraphics[width=0.85\textwidth, center]{images/ultrasonik.jpg}
     \caption{Sensor Ultrasonik}
-    \label{fig:Sensor Ultrasonic HC-SR04}
+    \label{fig:SensorUltrasonicHC-SR04}
 \end{figure}
 
-HC-SR04 merupakan sensor ultrasonik yang berfungsi sebagai pengirim, penerima, dan pengontrol gelombang ultrasonik. Alat ini bisa digunakan untuk mengukur jarak benda dari 2cm-4m dengan akurasi 3mm. Alat ini memiliki 4 pin, pin Vcc, Gnd, Trigger, dan Echo. Pin Vcc untuk listrik positif dan Gnd untuk ground-nya. Pin Trigger untuk trigger keluarnya sinyal dari sensor dan pin Echo untuk menangkap sinyal pantul dari benda.
+HC-SR04 merupakan sensor ultrasonik yang berfungsi sebagai pengirim, penerima, dan pengontrol gelombang ultrasonik. Alat ini bisa digunakan untuk mengukur jarak benda dari 2cm-4m dengan akurasi 3mm. Alat ini memiliki 4 pin, pin Vcc, Gnd, Trigger, dan Echo. Pin Vcc untuk listrik positif dan Gnd untuk ground-nya. Pin Trigger untuk trigger keluarnya sinyal dari sensor dan pin Echo untuk menangkap sinyal pantul dari benda. Sensor ultrasonik HC-SR04 bisa dilihat pada gambar ~\ref{fig:SensorUltrasonicHC-SR04}
 
 \subsection{SG90}
+SG90 adalah sebuah servo kecil dengan output power yang tinggi. Motor ini dapat berotasi sekitar 180 derajat dan bisa bekerja seperti servo lainnya hanya saja ukurannya lebih kecil \thecite{wicaksono2018a}.
+
+\begin{figure} [H]
+    % \includegraphics[width=0.85\textwidth, center]{images/servo.jpg}
+    \includegraphics[width=0.50\textwidth, center]{images/servo.jpg}
+    \caption{Servo SG90}
+    \label{fig:servo}
+\end{figure}
+
+Gambar ~\ref{fig:servo} merupakan gambar dari servo SG90.
 
 \subsection{Kamera Raspberry Pi v2}
+Modul Kamera v2 memiliki sensor Sony IMX219 8-megapiksel. Modul Kamera dapat digunakan untuk mengambil video definisi tinggi, dan juga foto. Gambar ~\ref{fig:raspicamera} merupakan gambar dari kamera Raspberry Pi.
+
+\begin{afigure} 
+    \includegraphics[width=0.85\textwidth, center]{images/raspicamera.jpg}
+    \caption{ Kamera Raspberry Pi}
+    \label{fig:raspicamera}
+\end{afigure}
 
 \subsection{API, REST API, dan RESTful API}
 
