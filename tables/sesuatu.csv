@@ -1,0 +1,4 @@
+DHT, NODEMCU
+Ground (-), GND
+Data (out), D4
+Vcc (+), 3v3

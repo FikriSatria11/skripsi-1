@@ -1,0 +1,4 @@
+SERVO, RASPBERRYPI
+PWM, Pin 3
+5v(+), Pin 4
+GND(-), Pin 6

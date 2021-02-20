@@ -1,0 +1,5 @@
+ULTRASONIC, RASPBERRYPI
+GND(-), Pin 6
+TRIG, Pin 11
+ECHO, Pin 12
+VCC(+), Pin 4
