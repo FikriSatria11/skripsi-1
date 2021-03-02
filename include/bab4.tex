@@ -3,6 +3,31 @@
 \section{Hasil Rancangan Sistem Identifikasi Kendaraan Pada Pemarkiran Dengan Pengenalan Citra Dan Pembacaan RFID}
 
 \subsection{Hasil Perancangan Perangkat Keras}
+\begin{figure} [H]
+    \includegraphics[height=7cm, width=0.5\textwidth, center]{images/alat-full-mobil.jpg}
+    \caption{Hasil Rancangan dan Pemasangan Alat}
+    \label{fig:alatfullmobil}
+\end{figure}
+
+\begin{figure} [H]
+    \includegraphics[height=7cm, width=0.5\textwidth, center]{images/alat-servo.jpg}
+    \caption{Hasil Rancangan Servo}
+    \label{fig:alatservo}
+\end{figure}
+
+\begin{figure} [H]
+    \includegraphics[height=7cm, width=0.5\textwidth, center]{images/alat-ultra&rfid.jpg}
+    \caption{Hasil Rancangan Ultrasonik dan RFID}
+    \label{fig:alatultrarfid}
+\end{figure}
+
+\begin{figure} [H]
+    \includegraphics[height=7cm, width=0.5\textwidth, center]{images/alat-kamera.jpg}
+    \caption{Hasil Rancangan Kamera}
+    \label{fig:alatkamera}
+\end{figure}
+
+Pada gambar diatas merupakan rangkaian perangkat keras untuk penelitian di mana seluruh perangkat dirangkai menjadi satu rangkaian.  Gambar ~\ref{fig:alatfullmobil} merupakan hasil dari rancangan dari penelitian yang dilakukan, yang dimana masih bersifat \textit{prototype}. Pada gambar ~\ref{fig:alatservo} dapat dilihat bahwa servo digambarkan sebagai palang parkir. Pada gambar ~\ref{fig:alatultrarfid} dapat dilihat sensor ultrasonik yang akan membaca jarak dari kendaraan untuk menentukan apakah kendaraan masih ada atau sudah tidak ada dan sensor rfid untuk membaca kartu atau tag dari pengendara. Pada gambar ~\ref{fig:alatkamera} dapat dilihat kamera raspberry yang digunakan untuk mengambil nomor plat kendaraan.
 
 \subsection{Raspberry Pi dan RFID MFRC522}
 \begin{figure} [H]
@@ -10,6 +35,8 @@
     \caption{Ragkaian Raspberry Pi dan RFID}
     \label{fig:skematikRfid}
 \end{figure}
+
+Berdasarkan gambar ~\ref{fig:skematikRfid} Menunjukkan Raspberry Pi sebagai mikrokontroler untuk menghubungkan sensor RFID yang akan membaca kartu atau tag dari pengendara. Untuk pin pada Raspberry Pi dihubungkan pada sensor RFID dapat dilihat pada tabel ~\ref{table:tableRfid}.
 
 \begin{atable}
     \caption{Rangkaian pin RFID ke Raspberry Pi}
@@ -39,6 +66,8 @@
     \label{fig:skematikUltrasonik}
 \end{figure}
 
+Gambar ~\ref{fig:skematikUltrasonik} merupakan gambar rangkaian Raspberry Pi dan sensor ultrasonik. Sensor ultrasonik berfungsi sebagai indikator untuk menutup palang parkir. Apabila didepan sensor ultrasonik masih ada kendaraan, maka palang parkir masih akan terbuka, sebaliknya apabila didepan sensor sudah tidak ada kendaraan, maka palang parkir akan menutup. Sensor ultrasonik yang digunakan adalah HC-SR04 yang mempunyai 4 pin yaitu pin \textit{ground} (-), pin \textit{echo}, pin \textit{trigger}, dan pin vcc (+). Untuk pin pada Raspberry Pi dihubungkan pada sensor HC-SR04 dapat dilihat pada tabel ~\ref{table:tableUltrasonic}.
+
 \begin{atable}
     \caption{Rangkaian pin Ultrasonik ke Raspberry Pi}
     \label{table:tableUltrasonic}
@@ -66,6 +95,8 @@
     \caption{Ragkaian Raspberry Pi dan Servo}
     \label{fig:skematikServo}
 \end{figure}
+
+Pada penelitian ini yang akan berfungsi sebagai palang parkir adalah servo SG90. Servo yang digunakan mempunyai 3 pin yaitu pin \textit{ground} (-), pin pwm, dan pin 5v (+). Untuk pin pada Raspberry Pi dihubungkan pada servo SG90 dapat dilihat pada tabel ~\ref{table:tableServo}.
 
 \begin{atable}
     \caption{Rangkaian pin Servo ke Raspberry Pi}
