@@ -1,0 +1,3 @@
+Coloumn , Type
+id , int(3)
+uid , varchar(20)

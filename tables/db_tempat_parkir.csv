@@ -1,0 +1,5 @@
+Coloumn, Type
+id, varchar(3)
+jenis, varchar(15)
+tarif, int(5)
+status, enum('Tersedia','Terpakai')

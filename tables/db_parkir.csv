@@ -1,0 +1,7 @@
+Coloumn , Type
+id , varchar(4)
+id_rfid_tag , varchar(15)
+nomor_plat , varchar(8)
+id_tempat_parkir , varchar(3)
+waktu_masuk , datetime
+waktu_keluar , datetime
