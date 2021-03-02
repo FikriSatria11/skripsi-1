@@ -4,7 +4,7 @@
 
 \subsection{Hasil Perancangan Perangkat Keras}
 \begin{figure} [H]
-    \includegraphics[height=7cm, width=0.5\textwidth, center]{images/alat-full-mobil.jpg}
+    \includegraphics[height=9cm, width=0.85\textwidth, center]{images/alat-full-mobil.jpg}
     \caption{Hasil Rancangan dan Pemasangan Alat}
     \label{fig:alatfullmobil}
 \end{figure}
@@ -16,7 +16,7 @@
 \end{figure}
 
 \begin{figure} [H]
-    \includegraphics[height=7cm, width=0.5\textwidth, center]{images/alat-ultra&rfid.jpg}
+    \includegraphics[height=7cm, width=0.65\textwidth, center]{images/alat-ultra&rfid.jpg}
     \caption{Hasil Rancangan Ultrasonik dan RFID}
     \label{fig:alatultrarfid}
 \end{figure}
@@ -296,44 +296,65 @@ Pada \textit{database} aplikasi ini, tabel dibagi menjadi 5 tabel sebagai beriku
 \end{enumerate}
 
 \subsection{Tampilan Website}
+Pada tahap ini dilakukan pengimplementasian aplikasi. Berikut penjelasan mengenai tampilan aplikasi.
+
+\subsubsection{Tampilan \textit{Layout} Parkir}
 \begin{figure} [H]
     \includegraphics[width=0.85\textwidth, center]{images/web 1 layout parkir.png}
-    \caption{Hasil Rancangan Kamera}
+    \caption{\textit{Layout} Parkir}
     \label{fig:web1layout-parkir}
 \end{figure}
 
+\textit{Layout} parkir berguna untuk menampilkan informasi mengenai jumlah slot parkir. Pada tampilan kita bisa melihat jumlah slot yang terisi dan terpakai. Pada gambar ~\ref{fig:web1layout-parkir} terlihat jumlah slot parkir ada delapan buah dan semuanya tersedia.\newline
+
 \begin{figure} [H]
     \includegraphics[width=0.85\textwidth, center]{images/web 1 layout parkir baru masuk.png}
-    \caption{Hasil Rancangan Kamera}
+    \caption{\textit{Layout} Parkir Saat Pengendara Baru Masuk}
     \label{fig:web1layout-parkir-baru-masuk}
 \end{figure}
 
 \begin{figure} [H]
     \includegraphics[width=0.85\textwidth, center]{images/web 1 layout parkir ada kendaraan.png}
-    \caption{Hasil Rancangan Kamera}
+    \caption{\textit{Layout} Parkir Saat Ada Kendaraan}
     \label{fig:web1layout-parkir-ada-kendaraan}
 \end{figure}
 
+Pada gambar ~\ref{fig:web1layout-parkir-baru-masuk} terlihat warna salah satu slot parkir berubah dari warna hijau ke warna biru, ini menunjukan slot yang harus diisi oleh pengendara pada saat baru masuk. Terlihat juga informasi seperti nomor plat, posisi parkir, dan saldo dari pengendara.
+
+Pada gambar ~\ref{fig:web1layout-parkir-ada-kendaraan} terlihat warna slot parkir berubah menjadi warna merah, itu menandakan bahwa slot tersebut sedang terisi.
+
+\subsubsection{Tampilan Isi Data}
 \begin{figure} [H]
     \includegraphics[width=0.85\textwidth, center]{images/web 2 isi data.png}
-    \caption{Hasil Rancangan Kamera}
+    \caption{\textit{Form} Isi Data}
     \label{fig:web2isi-data}
 \end{figure}
 
+Gambar ~\ref{fig:web2isi-data} merupakan gambar \textit{Form} isi data yang berfungsi untuk memasukkan informasi data pengendara kedalam \textit{database}. Data yang dimasukkan pada \textit{Form} inputan yaitu id RFID, jenis kendaraan, dan saldo. Setelah data diinput maka data akan tersimpan pada \textit{database}.
+
+\subsubsection{Tampilan Isi Saldo}
 \begin{figure} [H]
     \includegraphics[width=0.85\textwidth, center]{images/web 3 isi saldo.png}
-    \caption{Hasil Rancangan Kamera}
+    \caption{\textit{Form} Isi Saldo}
     \label{fig:web3isi-saldo}
 \end{figure}
 
+Gambar ~\ref{fig:web3isi-saldo} merupakan gambar \textit{Form} isi saldo yang berfungsi untuk menambahkan saldo pengendara kedalam \textit{database}. Data yang dimasukkan pada \textit{Form} inputan yaitu id RFID dan jumlah saldo yang ingin ditambahkan. Setelah data diinput maka data akan tersimpan pada \textit{database}.
+
+\subsubsection{Tampilan Daftar Pengguna}
 \begin{figure} [H]
     \includegraphics[width=0.85\textwidth, center]{images/web 4 pengguna.png}
-    \caption{Hasil Rancangan Kamera}
+    \caption{Daftar Pengguna}
     \label{fig:web4pengguna}
 \end{figure}
 
+Gambar ~\ref{fig:web4pengguna} merupakan gambar Tampilan Daftar Pengguna yang berfungsi untuk melihat pengguna yang telah terdaftar. Untuk mendaftarkan pengguna bisa dilakukan di \textit{Form} isi data.
+
+\subsubsection{Tampilan Informasi}
 \begin{figure} [H]
     \includegraphics[width=0.85\textwidth, center]{images/web 5 informasi.png}
-    \caption{Hasil Rancangan Kamera}
+    \caption{Informasi}
     \label{fig:web5informasi}
 \end{figure}
+
+Gambar ~\ref{fig:web5informasi} merupakan gambar Tapilan Informasi yang brrfungsi untuk menampilkan informasi dari pengendara yang sedang parkir. Tampilan ini juga bisa digunakan sebagai tampilan \textit{history} karena manampilkan riwayat parkir semua pengendara.
