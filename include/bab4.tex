@@ -36,13 +36,14 @@ Pada gambar diatas merupakan rangkaian perangkat keras untuk penelitian di mana 
     \label{fig:skematikRfid}
 \end{figure}
 
-Berdasarkan gambar ~\ref{fig:skematikRfid} Menunjukkan Raspberry Pi sebagai mikrokontroler untuk menghubungkan sensor RFID yang akan membaca kartu atau tag dari pengendara. Untuk pin pada Raspberry Pi dihubungkan pada sensor RFID dapat dilihat pada tabel ~\ref{table:tableRfid}.
+Berdasarkan gambar ~\ref{fig:skematikRfid} Menunjukkan Raspberry Pi sebagai mikrokontroler untuk menghubungkan sensor RFID yang akan membaca kartu atau tag dari pengendara. Untuk pin pada Raspberry Pi dihubungkan pada sensor RFID dapat dilihat pada tabel ~\ref{table:tableRfid}.\newline
 
 \begin{atable}
     \caption{Rangkaian pin RFID ke Raspberry Pi}
     \label{table:tableRfid}
     \csvreader[
         % column count = 11,
+        respect underscore=true,
         tabular=cc,
         head to column names,
         before table=\rowcolors{2}{gray!15}{gray!30},
@@ -59,6 +60,33 @@ Berdasarkan gambar ~\ref{fig:skematikRfid} Menunjukkan Raspberry Pi sebagai mikr
             \RASPBERRYPI}
 \end{atable}
 
+Berikut ini dilakukan pengujian jarak baca kartu RFID yang berfungsi untuk melihat jarak maksimum keterbacaan RFID dari bagian pembaca ke kartu RFID. Pengujian ini dilakukan dengan cara meletakkan kartu RFID dengan memberi jarak tertentu pada area pembacaan. Hasil pengujian dapat dilihat pada tabel ~\ref{table:tableUjiRfid}.
+
+\begin{atable}
+    \caption{Hasil uji jarak baca RFID}
+    \label{table:tableUjiRfid}
+    \csvreader[
+        % column count = 11,
+        respect underscore=true,
+        tabular=ccc,
+        head to column names,
+        before table=\rowcolors{2}{gray!15}{gray!30},
+        table head= \rowcolor{gray!50!black} 
+            \color{white} No. & 
+            \color{white} Jarak (mm) & 
+            \color{white} Terbaca
+            \\]
+        {tables/hasil-uji-jarak-rfid.csv}
+        {
+            No=\No, 
+            Jarak=\Jarak,
+            Terbaca=\Terbaca}
+        {
+            \No & 
+            \Jarak &
+            \Terbaca}
+\end{atable}
+
 \subsection{Raspberry Pi dan HC-SR04}
 \begin{figure} [H]
     \includegraphics[height=7cm, width=0.5\textwidth, center]{images/skematik_ultra.jpg}
@@ -73,6 +101,7 @@ Gambar ~\ref{fig:skematikUltrasonik} merupakan gambar rangkaian Raspberry Pi dan
     \label{table:tableUltrasonic}
     \csvreader[
         % column count = 11,
+        respect underscore=true,
         tabular=cc,
         head to column names,
         before table=\rowcolors{2}{gray!15}{gray!30},
@@ -103,6 +132,7 @@ Pada penelitian ini yang akan berfungsi sebagai palang parkir adalah servo SG90.
     \label{table:tableServo}
     \csvreader[
         % column count = 11,
+        respect underscore=true,
         tabular=cc,
         head to column names,
         before table=\rowcolors{2}{gray!15}{gray!30},
@@ -151,6 +181,7 @@ Pada \textit{database} aplikasi ini, tabel dibagi menjadi 5 tabel sebagai beriku
         \label{table:db_rfid_tag}
         \csvreader[
             % column count = 11,
+            respect underscore=true,
             tabular=cc,
             head to column names,
             before table=\rowcolors{2}{gray!15}{gray!30},
@@ -181,6 +212,7 @@ Pada \textit{database} aplikasi ini, tabel dibagi menjadi 5 tabel sebagai beriku
         \label{table:db_tempat_parkir}
         \csvreader[
             % column count = 11,
+            respect underscore=true,
             tabular=cc,
             head to column names,
             before table=\rowcolors{2}{gray!15}{gray!30},
@@ -207,27 +239,29 @@ Pada \textit{database} aplikasi ini, tabel dibagi menjadi 5 tabel sebagai beriku
 
     \textit{Foreign Key} : id\_rfid\_tag
 
-    % \begin{table} [H]
-    %     \centering 
-    %     \caption{kendaraan}
-    %     \label{table:db_kendaraan}
-    %     \csvreader[
-    %         % column count = 11,
-    %         tabular=cc,
-    %         head to column names,
-    %         before table=\rowcolors{2}{gray!15}{gray!30},
-    %         table head= \rowcolor{gray!50!black} 
-    %             \color{white} \textit{Coloumn} & 
-    %             \color{white} \textit{Type} 
-    %             \\]
-    %         {tables/db_kendaraan.csv}
-    %         {
-    %             Coloumn=\Coloumn, 
-    %             Type=\Type}
-    %         {
-    %             \Coloumn & 
-    %             \Type}
-    % \end{table}
+    \begin{table} [H]
+        \centering 
+        \caption{kendaraan}
+        \label{table:db_kendaraan}
+        \csvreader[
+            % column count = 11,
+            respect underscore=true,
+            tabular=cc,
+            head to column names,
+            respect underscore=true,
+            before table=\rowcolors{2}{gray!15}{gray!30},
+            table head= \rowcolor{gray!50!black} 
+                \color{white} Coloumn & 
+                \color{white} Type
+                \\]
+            {tables/db_kendaraan.csv}
+            {
+                Coloumn=\Coloumn, 
+                Type=\Type}
+            {
+                \Coloumn & 
+                \Type}
+    \end{table}
 
     Tabel kendaraan mempunyai atribut \textit{id} yang berfungsi sebagai kunci utama. Atribut nomor\_plat berfungsi untuk menyimpan nomor plat pengendara. Atribut id\_rfid\_tag didapat dari tabel rfid\_tag.
 
@@ -239,27 +273,28 @@ Pada \textit{database} aplikasi ini, tabel dibagi menjadi 5 tabel sebagai beriku
 
     \textit{Foreign Key} : id\_rfid\_tag, id\_tempat\_parkir
 
-    % \begin{table} [H]
-    %     \centering
-    %     \caption{parkir}
-    %     \label{table:db_parkir}
-    %     \csvreader[
-    %         % column count = 11,
-    %         tabular=cc,
-    %         head to column names,
-    %         before table=\rowcolors{2}{gray!15}{gray!30},
-    %         table head= \rowcolor{gray!50!black} 
-    %             \color{white} \textit{Coloumn} & 
-    %             \color{white} \textit{Type} 
-    %             \\]
-    %         {tables/db_parkir.csv}
-    %         {
-    %             Coloumn=\Coloumn, 
-    %             Type=\Type}
-    %         {
-    %             \Coloumn & 
-    %             \Type}
-    % \end{table}
+    \begin{table} [H]
+        \centering
+        \caption{parkir}
+        \label{table:db_parkir}
+        \csvreader[
+            % column count = 11,
+            respect underscore=true,
+            tabular=cc,
+            head to column names,
+            before table=\rowcolors{2}{gray!15}{gray!30},
+            table head= \rowcolor{gray!50!black} 
+                \color{white} \textit{Coloumn} & 
+                \color{white} \textit{Type} 
+                \\]
+            {tables/db_parkir.csv}
+            {
+                Coloumn=\Coloumn, 
+                Type=\Type}
+            {
+                \Coloumn & 
+                \Type}
+    \end{table}
 
     Tabel kendaraan mempunyai atribut \textit{id} yang berfungsi sebagai kunci utama. Atribut id\_rfid\_tag didapat dari tabel rfid\_tag. Atribut nomor\_plat digunakan untuk menyimpan nomor plat pengendara. Atribut id\_tempat\_parkir didapat dari tabel tempat\_parkir. Atribut waktu\_masuk digunakan untuk mencatat waktu masuk pengendara. Atribut waktu\_keluar digunakan untuk mencatat waktu keluar pengguna.
 
@@ -275,6 +310,7 @@ Pada \textit{database} aplikasi ini, tabel dibagi menjadi 5 tabel sebagai beriku
         \label{table:db_reload_id}
         \csvreader[
             % column count = 11,
+            respect underscore=true,
             tabular=cc,
             head to column names,
             before table=\rowcolors{2}{gray!15}{gray!30},

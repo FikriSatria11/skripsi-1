@@ -1,4 +1,4 @@
 Coloumn, Type
 id, varchar(15)
-jenis_kendaraan, enum('mobil','motor')
+jenis_kendaraan, {enum('mobil','motor')}
 saldo, bigint(8)
