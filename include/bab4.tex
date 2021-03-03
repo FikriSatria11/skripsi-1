@@ -27,7 +27,19 @@
     \label{fig:alatkamera}
 \end{figure}
 
-Pada gambar diatas merupakan rangkaian perangkat keras untuk penelitian di mana seluruh perangkat dirangkai menjadi satu rangkaian.  Gambar ~\ref{fig:alatfullmobil} merupakan hasil dari rancangan dari penelitian yang dilakukan, yang dimana masih bersifat \textit{prototype}. Pada gambar ~\ref{fig:alatservo} dapat dilihat bahwa servo digambarkan sebagai palang parkir. Pada gambar ~\ref{fig:alatultrarfid} dapat dilihat sensor ultrasonik yang akan membaca jarak dari kendaraan untuk menentukan apakah kendaraan masih ada atau sudah tidak ada dan sensor rfid untuk membaca kartu atau tag dari pengendara. Pada gambar ~\ref{fig:alatkamera} dapat dilihat kamera raspberry yang digunakan untuk mengambil nomor plat kendaraan.
+Pada gambar diatas merupakan rangkaian perangkat keras untuk penelitian di mana seluruh perangkat dirangkai menjadi satu rangkaian.  Gambar ~\ref{fig:alatfullmobil} merupakan hasil dari rancangan dari penelitian yang dilakukan, yang dimana masih bersifat \textit{prototype}. Pada gambar ~\ref{fig:alatservo} dapat dilihat bahwa servo digambarkan sebagai palang parkir. Pada gambar ~\ref{fig:alatultrarfid} dapat dilihat sensor ultrasonik yang akan membaca jarak dari kendaraan untuk menentukan apakah kendaraan masih ada atau sudah tidak ada dan sensor rfid untuk membaca kartu atau tag dari pengendara. Pada gambar ~\ref{fig:alatkamera} dapat dilihat kamera raspberry yang digunakan untuk mengambil nomor plat kendaraan. \textit{Activity} diagram pada sistem yang dibuat bisa dilihat pada gambar ~\ref{fig:diagrammasuk} dan gambar ~\ref{fig:diagramkeluar}.
+
+\begin{figure} [H]
+    \includegraphics[width=0.85\textwidth, center]{images/activity diagram skripsi masuk.png}
+    \caption{Activity Diagram Masuk}
+    \label{fig:diagrammasuk}
+\end{figure}
+
+\begin{figure} [H]
+    \includegraphics[width=0.85\textwidth, center]{images/activity diagram skripsi keluar.png}
+    \caption{Activity Diagram Keluar}
+    \label{fig:diagramkeluar}
+\end{figure}
 
 \subsection{Raspberry Pi dan RFID MFRC522}
 \begin{figure} [H]
@@ -94,7 +106,7 @@ Berikut ini dilakukan pengujian jarak baca kartu RFID yang berfungsi untuk melih
     \label{fig:skematikUltrasonik}
 \end{figure}
 
-Gambar ~\ref{fig:skematikUltrasonik} merupakan gambar rangkaian Raspberry Pi dan sensor ultrasonik. Sensor ultrasonik berfungsi sebagai indikator untuk menutup palang parkir. Apabila didepan sensor ultrasonik masih ada kendaraan, maka palang parkir masih akan terbuka, sebaliknya apabila didepan sensor sudah tidak ada kendaraan, maka palang parkir akan menutup. Sensor ultrasonik yang digunakan adalah HC-SR04 yang mempunyai 4 pin yaitu pin \textit{ground} (-), pin \textit{echo}, pin \textit{trigger}, dan pin vcc (+). Untuk pin pada Raspberry Pi dihubungkan pada sensor HC-SR04 dapat dilihat pada tabel ~\ref{table:tableUltrasonic}.
+Gambar ~\ref{fig:skematikUltrasonik} merupakan gambar rangkaian Raspberry Pi dan sensor ultrasonik. Sensor ultrasonik berfungsi sebagai indikator untuk menutup palang parkir. Apabila didepan sensor ultrasonik masih ada kendaraan, maka palang parkir masih akan terbuka, sebaliknya apabila didepan sensor sudah tidak ada kendaraan, maka palang parkir akan menutup. Sensor ultrasonik yang digunakan adalah HC-SR04 yang mempunyai 4 pin yaitu pin \textit{ground} (-), pin \textit{echo}, pin \textit{trigger}, dan pin vcc (+). Untuk pin pada Raspberry Pi dihubungkan pada sensor HC-SR04 dapat dilihat pada tabel ~\ref{table:tableUltrasonic}.\newline
 
 \begin{atable}
     \caption{Rangkaian pin Ultrasonik ke Raspberry Pi}
@@ -117,6 +129,34 @@ Gambar ~\ref{fig:skematikUltrasonik} merupakan gambar rangkaian Raspberry Pi dan
             \ULTRASONIC & 
             \RASPBERRYPI}
 \end{atable}
+
+Berikut ini pengujian yang dilakukan pada sensor ultrasonik untuk mengukur tinggat kesalahan jarak yang diukur oleh sensor ultrasonik dibandingkan jarak sebenarnya dengan pengukuran secara manual:
+
+% DISINI TABELNYA
+
+Berdasarkan data hasil pengujian sensor ultrasonik pada tabel ~\ref{initabel}, pengambilan data dilakukan sebanyak empat belas kali dengan tiga kali pengukuran, didapatkan hasil yang berbeda antara pengukuran manual yang menggunakan penggaris dengan pengukuran oleh sensor. Dari data hasil pengukuran yang pertama didapatbahwa terdapat selisih jarak hasil pengujian oleh sensor dengan jarak sebenarnya, dilakukan pengukuran dengan rentang jarak dari 2 cm sampai 120 cm yang dimana untuk pengukuran 2 cm sampai 15 cm tidak ada selisih antara pengukuran manual dan pengukuran sensor. Pada jarak 20 cm tidak ada selisih untuk pengukuran pertama, sedangkan pengukuran kedua dan ketiga terdapat selisih sebesar 1 cm. Pada jarak 30 cm terdapat selisih 1 cm untuk semua pengukuran. Pada jarak 40 cm selisih pada pengukuran pertama sebesar 2 cm, kedua sebesar 1 cm, dan ketiga sebesar 2 cm. Pada jarak 50 cm dan 60 cm terdapat selisih sebesar 2 cm pada setiap pengukuran. Pada jara 70 cm selisih pada pengukuran pertama sebesar 2 cm, kedua sebesar 1 cm, dan ketiga sebesar 2 cm. Pada jarak 80 cm dan 90 cm terdapat selisih sebesar 3 cm pada setiap pengukuran. Pada jarak 100 cm dan 110 cm terdapat selisih sebesar 4 cm pada setiap pengukuran. Pada jarak 120 cm selisih pada pengukuran pertama sebesar 5 cm, kedua sebesar 6 cm, dan ketiga sebesar 5 cm.
+
+Berdasarkan data hasil pengujian pada tabel menunjukan bahwa semakin jauh jarak yang diukur, semakin besar kesalahan jarak yang diukur oleh sensor dari jarak sebenarnya. Perbedaan jarak hasil pengujian sensor dengan jarak sesungguhnya dapat disebabkan oleh adanya \textit{noise} atau permukaan jarak yang diukur tidak rata.
+
+Berikut ini rumus serta perhitungan yang digunakan untuk menghitungpersentase kesalahan dan rata-rata kesalahan, dari perbandingan pengukuran jarakantara sensor dengan manual:
+
+\begin{enumerate}[topsep=0pt,itemsep=0pt,partopsep=0pt, parsep=0pt]
+    \item Persentase kesalahan
+    \begin{equation}
+        \label{eq:persentase-kesalahan}
+        \begin{split}
+        \%kesalahan = \frac{(jarak manual - jarak sensor)}{jarak manual} x 100\%
+        \end{split}
+    \end{equation}
+
+    \item Rata-rata kesalahan
+    \begin{equation}
+        \label{eq:persentase-kesalahan}
+        \begin{split}
+        \%rata-rata kesalahan = \frac{jarak \% kesalahan}{banyaknya data} 
+        \end{split}
+    \end{equation}
+\end{enumerate}
 
 \subsection{Raspberry Pi dan SG90}
 \begin{figure} [H]
@@ -161,8 +201,6 @@ Gambar ~\ref{fig:skematikKamera} merupakan gambar skematik Raspberry Pi dengan K
 % \subsection{Hasil Perancangan Perangkat Lunak}
 
 \section{Hasil Rancangan Aplikasi Web}
-
-\subsection{Activity Diagram}
 
 \subsection{Struktur \textit{Database}}
 Nama \textit{database} : skripsi
