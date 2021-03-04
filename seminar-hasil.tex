@@ -4,6 +4,9 @@
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{array}
+\usepackage{listings}
+\usepackage{amsmath}  % for \hookrightarrow
+
 
 \renewcommand{\baselinestretch}{1.42}
 \renewcommand{\UrlFont}{\small\rm}
@@ -92,7 +95,6 @@
     \input{include/bab3.tex}
     \input{include/bab4.tex}
     \input{include/bab5.tex}
-    \input{include/lampiran.tex}
     %-----------------------------------------------------------------------------
     % End Daftar masukan untuk Bab
     %=============================================================================
@@ -105,5 +107,8 @@
     %-----------------------------------------------------------------------------
     % End Daftar Pustaka
     %=============================================================================
+    \addcontentsline{toc}{chapter}{LAMPIRAN}
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+    \input{include/lampiran.tex}
 
 \end{document}

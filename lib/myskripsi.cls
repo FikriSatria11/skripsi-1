@@ -58,6 +58,11 @@
 
 % use Watermark
 \RequirePackage[pages=some]{background}
+
+% use listings for code script
+\RequirePackage{listings}
+\RequirePackage{color}
+
 %-----------------------------------------------------------------------------
 % End Require Package
 %=============================================================================
@@ -85,6 +90,64 @@
 %-----------------------------------------------------------------------------
 % End Setting footer, header and page number
 %=============================================================================
+
+%===========================================================
+% Code Script, Listing
+%-----------------------------------------------------------
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{python}{
+    language=Python,
+    emptylines=1,
+    backgroundcolor=\color{light-gray},
+    rulecolor=\color{light-gray},
+    xleftmargin=1cm,
+    framexleftmargin=1cm,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    breaklines=true,
+    breakatwhitespace=true,
+    showstringspaces=false,
+    tabsize=2,
+    moredelim=**[is][\color{red}]{@}{@},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+}
+
+\lstdefinestyle{shell}{
+    language=bash,
+    emptylines=1,
+    backgroundcolor=\color{black},
+    rulecolor=\color{black},
+    columns=flexible,
+    basicstyle={\small\ttfamily\color{white}},
+    breaklines=true,
+    breakatwhitespace=true,
+    showstringspaces=false,
+    tabsize=2,
+    moredelim=**[is][\color{red}]{@}{@},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+}
+
+\lstdefinestyle{plain}{
+    emptylines=1,
+    backgroundcolor=\color{light-gray},
+    rulecolor=\color{light-gray},
+    columns=flexible,
+    basicstyle={\footnotesize\ttfamily\color{black}},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=2
+}
+%-----------------------------------------------------------
+% End Code Script, Listing
+%===========================================================
 
 
 %=============================================================================

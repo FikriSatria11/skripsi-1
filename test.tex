@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{lmodern}  % for bold teletype font
+\usepackage{amsmath}  % for \hookrightarrow
+\usepackage{xcolor}   % for \textcolor
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+\begin{document}
+\begin{lstlisting}[language=java]
+public class MeasureStationControllerV0Test {   
+        MeasureStationControllerV0 controller;  
+        MeasureStation ms = new MeasureStation();   
+        MeasureStationConfiguration config = new MeasureStationConfiguration();     
+        DataServer dataserver = new DataServer();
+\end{lstlisting}
+\end{document}
