@@ -4,6 +4,12 @@
 
 \subsection{Hasil Perancangan Perangkat Keras}
 \begin{figure} [H]
+    \includegraphics[width=0.85\textwidth, center]{images/skematik-full.png}
+    \caption{Rangkaian Skematik Alat}
+    \label{fig:rangkaianSkematikAlat}
+\end{figure}
+
+\begin{figure} [H]
     \includegraphics[height=9cm, width=0.85\textwidth, center]{images/alat-full-mobil.jpg}
     \caption{Hasil Rancangan dan Pemasangan Alat}
     \label{fig:alatfullmobil}
@@ -30,13 +36,13 @@
 Pada gambar diatas merupakan rangkaian perangkat keras untuk penelitian di mana seluruh perangkat dirangkai menjadi satu rangkaian.  Gambar ~\ref{fig:alatfullmobil} merupakan hasil dari rancangan dari penelitian yang dilakukan, yang dimana masih bersifat \textit{prototype}. Pada gambar ~\ref{fig:alatservo} dapat dilihat bahwa servo digambarkan sebagai palang parkir. Pada gambar ~\ref{fig:alatultrarfid} dapat dilihat sensor ultrasonik yang akan membaca jarak dari kendaraan untuk menentukan apakah kendaraan masih ada atau sudah tidak ada dan sensor rfid untuk membaca kartu atau tag dari pengendara. Pada gambar ~\ref{fig:alatkamera} dapat dilihat kamera raspberry yang digunakan untuk mengambil nomor plat kendaraan. \textit{Activity} diagram pada sistem yang dibuat bisa dilihat pada gambar ~\ref{fig:diagrammasuk} dan gambar ~\ref{fig:diagramkeluar}.\newline
 
 \begin{figure} [H]
-    \includegraphics[width=0.85\textwidth, center]{images/activity diagram skripsi masuk.png}
+    \includegraphics[width=1\textwidth, center]{images/activity diagram skripsi masuk.png}
     \caption{Activity Diagram Masuk}
     \label{fig:diagrammasuk}
 \end{figure}
 
 \begin{figure} [H]
-    \includegraphics[width=0.85\textwidth, center]{images/activity diagram skripsi keluar.png}
+    \includegraphics[width=1\textwidth, center]{images/activity diagram skripsi keluar.png}
     \caption{Activity Diagram Keluar}
     \label{fig:diagramkeluar}
 \end{figure}
@@ -130,11 +136,35 @@ Gambar ~\ref{fig:skematikUltrasonik} merupakan gambar rangkaian Raspberry Pi dan
             \RASPBERRYPI}
 \end{atable}
 
-Berikut ini pengujian yang dilakukan pada sensor ultrasonik untuk mengukur tinggat kesalahan jarak yang diukur oleh sensor ultrasonik dibandingkan jarak sebenarnya dengan pengukuran secara manual:
+Berikut ini pengujian yang dilakukan pada sensor ultrasonik untuk mengukur tinggat kesalahan jarak yang diukur oleh sensor ultrasonik dibandingkan jarak sebenarnya dengan pengukuran secara manual: \newline \newline
 
-% DISINI TABELNYA
+\begin{atable} 
+    \caption{Hasil uji jarak baca servo}
+    \label{table:tableUjiServo}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \multirow{3}{*}{Pengukuran Manual} & \multicolumn{3}{c|}{Pengukuran Sensor (cm)} & \multicolumn{3}{c|}{Selisih Pengukuran (cm)} & \multicolumn{3}{c|}{Persentase Kesalahan} \\ \cline{2-10} 
+                                       & \multicolumn{3}{c|}{Pengukuran ke-}         & \multicolumn{3}{c|}{Pengukuran ke-}          & \multicolumn{3}{c|}{Pengukuran ke-}       \\ \cline{2-10} 
+                                       & 1             & 2            & 3            & 1             & 2             & 3            & 1            & 2            & 3           \\ \hline
+    2                                  & 2             & 2            & 2            & 0             & 0             & 0            & 0            & 0            & 0           \\ \hline
+    6                                  & 6             & 6            & 6            & 0             & 0             & 0            & 0            & 0            & 0           \\ \hline
+    15                                 & 15            & 15           & 15           & 0             & 0             & 0            & 0            & 0            & 0           \\ \hline
+    20                                 & 20            & 19           & 19           & 0             & 1             & 1            & 0            & 5            & 5           \\ \hline
+    30                                 & 29            & 29           & 29           & 1             & 1             & 1            & 3            & 3            & 3           \\ \hline
+    40                                 & 38            & 39           & 38           & 2             & 1             & 2            & 5            & 3            & 5           \\ \hline
+    50                                 & 49            & 49           & 49           & 1             & 1             & 1            & 2            & 2            & 2           \\ \hline
+    60                                 & 57            & 56           & 57           & 3             & 4             & 3            & 5            & 7            & 5           \\ \hline
+    70                                 & 68            & 69           & 68           & 2             & 1             & 2            & 3            & 1            & 3           \\ \hline
+    80                                 & 78            & 78           & 78           & 2             & 2             & 2            & 3            & 3            & 3           \\ \hline
+    90                                 & 89            & 90           & 88           & 1             & 0             & 2            & 1            & 0            & 2           \\ \hline
+    100                                & 96            & 97           & 96           & 4             & 3             & 4            & 4            & 3            & 4           \\ \hline
+    110                                & 107           & 107          & 108          & 3             & 3             & 2            & 3            & 3            & 2           \\ \hline
+    120                                & 115           & 114          & 115          & 5             & 6             & 5            & 4            & 5            & 4           \\ \hline
+    \multicolumn{7}{|c|}{Rata-rata kesalahan}                                                                                       & 2,34         & 2,44         & 2,71        \\ \hline
+    \end{tabular}
+\end{atable}
 
-Berdasarkan data hasil pengujian sensor ultrasonik pada tabel ~\ref{initabel}, pengambilan data dilakukan sebanyak empat belas kali dengan tiga kali pengukuran, didapatkan hasil yang berbeda antara pengukuran manual yang menggunakan penggaris dengan pengukuran oleh sensor. Dari data hasil pengukuran yang pertama didapatbahwa terdapat selisih jarak hasil pengujian oleh sensor dengan jarak sebenarnya, dilakukan pengukuran dengan rentang jarak dari 2 cm sampai 120 cm yang dimana untuk pengukuran 2 cm sampai 15 cm tidak ada selisih antara pengukuran manual dan pengukuran sensor. Pada jarak 20 cm tidak ada selisih untuk pengukuran pertama, sedangkan pengukuran kedua dan ketiga terdapat selisih sebesar 1 cm. Pada jarak 30 cm terdapat selisih 1 cm untuk semua pengukuran. Pada jarak 40 cm selisih pada pengukuran pertama sebesar 2 cm, kedua sebesar 1 cm, dan ketiga sebesar 2 cm. Pada jarak 50 cm dan 60 cm terdapat selisih sebesar 2 cm pada setiap pengukuran. Pada jara 70 cm selisih pada pengukuran pertama sebesar 2 cm, kedua sebesar 1 cm, dan ketiga sebesar 2 cm. Pada jarak 80 cm dan 90 cm terdapat selisih sebesar 3 cm pada setiap pengukuran. Pada jarak 100 cm dan 110 cm terdapat selisih sebesar 4 cm pada setiap pengukuran. Pada jarak 120 cm selisih pada pengukuran pertama sebesar 5 cm, kedua sebesar 6 cm, dan ketiga sebesar 5 cm.
+Berdasarkan data hasil pengujian sensor ultrasonik pada tabel ~\ref{table:tableUjiServo}, pengambilan data dilakukan sebanyak empat belas kali dengan tiga kali pengukuran, didapatkan hasil yang berbeda antara pengukuran manual yang menggunakan penggaris dengan pengukuran oleh sensor. Dari data hasil pengukuran yang pertama didapatbahwa terdapat selisih jarak hasil pengujian oleh sensor dengan jarak sebenarnya, dilakukan pengukuran dengan rentang jarak dari 2 cm sampai 120 cm yang dimana untuk pengukuran 2 cm sampai 15 cm tidak ada selisih antara pengukuran manual dan pengukuran sensor. Pada jarak 20 cm tidak ada selisih untuk pengukuran pertama, sedangkan pengukuran kedua dan ketiga terdapat selisih sebesar 1 cm. Pada jarak 30 cm terdapat selisih 1 cm untuk semua pengukuran. Pada jarak 40 cm selisih pada pengukuran pertama sebesar 2 cm, kedua sebesar 1 cm, dan ketiga sebesar 2 cm. Pada jarak 50 cm dan 60 cm terdapat selisih sebesar 2 cm pada setiap pengukuran. Pada jara 70 cm selisih pada pengukuran pertama sebesar 2 cm, kedua sebesar 1 cm, dan ketiga sebesar 2 cm. Pada jarak 80 cm dan 90 cm terdapat selisih sebesar 3 cm pada setiap pengukuran. Pada jarak 100 cm dan 110 cm terdapat selisih sebesar 4 cm pada setiap pengukuran. Pada jarak 120 cm selisih pada pengukuran pertama sebesar 5 cm, kedua sebesar 6 cm, dan ketiga sebesar 5 cm.
 
 Berdasarkan data hasil pengujian pada tabel menunjukan bahwa semakin jauh jarak yang diukur, semakin besar kesalahan jarak yang diukur oleh sensor dari jarak sebenarnya. Perbedaan jarak hasil pengujian sensor dengan jarak sesungguhnya dapat disebabkan oleh adanya \textit{noise} atau permukaan jarak yang diukur tidak rata.
 
@@ -202,6 +232,15 @@ Gambar ~\ref{fig:skematikKamera} merupakan gambar skematik Raspberry Pi dengan K
 
 \section{Hasil Rancangan Aplikasi Web}
 Pada penelitian ini menggunakan web sebagai \textit{user interface}. Web yang digunakan dibuat dengan bahasa pemrograman python dan Flask sebagai \textit{framework}nya.
+
+\subsection{\textit{Entity relationship Diagram}}
+\begin{figure} [H]
+    \includegraphics[width=0.85\textwidth, center]{images/er diagram.png}
+    \caption{ERD}
+    \label{fig:erd}
+\end{figure}
+
+Pada gambar ~\ref{fig:erd}, dapat dilihat terdapat 4 tabel yang saling berelasi antar tabel lain dan 1 tabel yang tidak mempunyai relasi antar tabel lain.
 
 \subsection{Struktur \textit{Database}}
 Nama \textit{database} : skripsi
