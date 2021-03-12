@@ -80,9 +80,10 @@ Berdasarkan gambar ~\ref{fig:skematikRfid} Menunjukkan Raspberry Pi sebagai mikr
 
 Berikut ini dilakukan pengujian jarak baca kartu RFID yang berfungsi untuk melihat jarak maksimum keterbacaan RFID dari bagian pembaca ke kartu RFID. Pengujian ini dilakukan dengan cara meletakkan kartu RFID dengan memberi jarak tertentu pada area pembacaan. Hasil pengujian dapat dilihat pada tabel ~\ref{table:tableUjiRfid}.
 
-\begin{atable}
+\begin{table}[H]
     \caption{Hasil uji jarak baca RFID}
     \label{table:tableUjiRfid}
+    \centering
     \csvreader[
         % column count = 11,
         respect underscore=true,
@@ -103,7 +104,9 @@ Berikut ini dilakukan pengujian jarak baca kartu RFID yang berfungsi untuk melih
             \No & 
             \Jarak &
             \Terbaca}
-\end{atable}
+\end{table}
+
+Berdasarkan data hasil pengujian sensor RFID pada tabel ~\ref{table:tableUjiRfid}, pengambilan data dilakukan sebanyak dua puluh kali. Dari data hasil pengukuran yang pertama sampai ke lima belas dengan jarak 0 mm sampai 28 mm, kartu RFID dapat terbaca dengan baik dan pengukuran ke enam belas sampai dua puluh dengan jarak 30 mm sampai 38 mm, kartu sudah tidak bisa tebrbaca.
 
 \subsection{Raspberry Pi dan HC-SR04}
 \begin{figure} [H]
@@ -138,12 +141,38 @@ Gambar ~\ref{fig:skematikUltrasonik} merupakan gambar rangkaian Raspberry Pi dan
 
 Berikut ini pengujian yang dilakukan pada sensor ultrasonik untuk mengukur tinggat kesalahan jarak yang diukur oleh sensor ultrasonik dibandingkan jarak sebenarnya dengan pengukuran secara manual: \newline \newline
 
+% \begin{table}[H]
+%     \caption{Hasil uji jarak baca servo}
+%     \label{table:tableUjiServo}
+%     \begin{tabular}{cccccccccc}
+%     \hline
+%     \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Pengukuran \\ Manual\end{tabular}} & \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}Pengukuran \\ Sensor (cm)\end{tabular}} & \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}Selisih \\ Pengukuran (cm)\end{tabular}} & \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}Persentase \\ Kesalahan(\%)\end{tabular}} \\ \cline{2-10} 
+%                                                                                   & \multicolumn{3}{c|}{Pengukuran ke-}                                                   & \multicolumn{3}{c|}{Pengukuran ke-}                                                    & \multicolumn{3}{c|}{Pengukuran ke-}                                                     \\ \cline{2-10} 
+%                                                                                   & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{2}     & \multicolumn{1}{c|}{3}     & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{3}     & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{3}      \\ \hline
+%     \multicolumn{1}{|c|}{2}                                                       & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{2}     & \multicolumn{1}{c|}{2}     & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}     & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      \\ \hline
+%     \multicolumn{1}{|c|}{6}                                                       & \multicolumn{1}{c|}{6}      & \multicolumn{1}{c|}{6}     & \multicolumn{1}{c|}{6}     & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}     & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      \\ \hline
+%     \multicolumn{1}{|c|}{15}                                                      & \multicolumn{1}{c|}{15}     & \multicolumn{1}{c|}{15}    & \multicolumn{1}{c|}{15}    & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}     & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}      \\ \hline
+%     \multicolumn{1}{|c|}{20}                                                      & \multicolumn{1}{c|}{20}     & \multicolumn{1}{c|}{19}    & \multicolumn{1}{c|}{19}    & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{1}     & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{5}      & \multicolumn{1}{c|}{5}      \\ \hline
+%     \multicolumn{1}{|c|}{30}                                                      & \multicolumn{1}{c|}{29}     & \multicolumn{1}{c|}{29}    & \multicolumn{1}{c|}{29}    & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{1}     & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{3}      \\ \hline
+%     \multicolumn{1}{|c|}{40}                                                      & \multicolumn{1}{c|}{38}     & \multicolumn{1}{c|}{39}    & \multicolumn{1}{c|}{38}    & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{2}     & \multicolumn{1}{c|}{5}      & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{5}      \\ \hline
+%     \multicolumn{1}{|c|}{50}                                                      & \multicolumn{1}{c|}{49}     & \multicolumn{1}{c|}{49}    & \multicolumn{1}{c|}{49}    & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{1}     & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{2}      \\ \hline
+%     \multicolumn{1}{|c|}{60}                                                      & \multicolumn{1}{c|}{57}     & \multicolumn{1}{c|}{56}    & \multicolumn{1}{c|}{57}    & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{4}      & \multicolumn{1}{c|}{3}     & \multicolumn{1}{c|}{5}      & \multicolumn{1}{c|}{7}      & \multicolumn{1}{c|}{5}      \\ \hline
+%     \multicolumn{1}{|c|}{70}                                                      & \multicolumn{1}{c|}{68}     & \multicolumn{1}{c|}{69}    & \multicolumn{1}{c|}{68}    & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{2}     & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{3}      \\ \hline
+%     \multicolumn{1}{|c|}{80}                                                      & \multicolumn{1}{c|}{78}     & \multicolumn{1}{c|}{78}    & \multicolumn{1}{c|}{78}    & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{2}     & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{3}      \\ \hline
+%     \multicolumn{1}{|c|}{90}                                                      & \multicolumn{1}{c|}{89}     & \multicolumn{1}{c|}{90}    & \multicolumn{1}{c|}{88}    & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{2}     & \multicolumn{1}{c|}{1}      & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{2}      \\ \hline
+%     \multicolumn{1}{|c|}{100}                                                     & \multicolumn{1}{c|}{96}     & \multicolumn{1}{c|}{97}    & \multicolumn{1}{c|}{96}    & \multicolumn{1}{c|}{4}      & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{4}     & \multicolumn{1}{c|}{4}      & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{4}      \\ \hline
+%     \multicolumn{1}{|c|}{110}                                                     & \multicolumn{1}{c|}{107}    & \multicolumn{1}{c|}{107}   & \multicolumn{1}{c|}{108}   & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{2}     & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{3}      & \multicolumn{1}{c|}{2}      \\ \hline
+%     \multicolumn{1}{|c|}{120}                                                     & \multicolumn{1}{c|}{115}    & \multicolumn{1}{c|}{114}   & \multicolumn{1}{c|}{115}   & \multicolumn{1}{c|}{5}      & \multicolumn{1}{c|}{6}      & \multicolumn{1}{c|}{5}     & \multicolumn{1}{c|}{4}      & \multicolumn{1}{c|}{5}      & \multicolumn{1}{c|}{4}      \\ \hline
+%     \multicolumn{7}{c}{Rata-rata kesalahan}                                                                                                                                                                                                                        & 2,34                        & 2,44                        & 2,71                        \\ \hline
+%     \end{tabular}
+% \end{table}
+
 \begin{atable} 
     \caption{Hasil uji jarak baca servo}
     \label{table:tableUjiServo}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
     \hline
-    \multirow{3}{*}{Pengukuran Manual} & \multicolumn{3}{c|}{Pengukuran Sensor (cm)} & \multicolumn{3}{c|}{Selisih Pengukuran (cm)} & \multicolumn{3}{c|}{Persentase Kesalahan} \\ \cline{2-10} 
+    \multirow{3}{2cm}{Pengukuran Manual(cm)} & \multicolumn{3}{c|}{Pengukuran Sensor(cm)} & \multicolumn{3}{c|}{Selisih Pengukuran(cm)} & \multicolumn{3}{c|}{Persentase Kesalahan(\%)} \\ \cline{2-10} 
                                        & \multicolumn{3}{c|}{Pengukuran ke-}         & \multicolumn{3}{c|}{Pengukuran ke-}          & \multicolumn{3}{c|}{Pengukuran ke-}       \\ \cline{2-10} 
                                        & 1             & 2            & 3            & 1             & 2             & 3            & 1            & 2            & 3           \\ \hline
     2                                  & 2             & 2            & 2            & 0             & 0             & 0            & 0            & 0            & 0           \\ \hline
