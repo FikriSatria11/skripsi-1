@@ -255,7 +255,15 @@ Pada penelitian ini yang akan berfungsi sebagai palang parkir adalah servo SG90.
     \label{fig:skematikKamera}
 \end{figure}
 
-Gambar ~\ref{fig:skematikKamera} merupakan gambar skematik Raspberry Pi dengan Kamera. Untuk menghubungkan Raspberry Pi dengan kamera cukup dengan menghubungkan kamera dengan port \textit{Camera Serial Interface} (CSI) yang sudah tersedia pada Raspberry Pi.
+Gambar ~\ref{fig:skematikKamera} merupakan gambar skematik Raspberry Pi dengan kamera. Untuk menghubungkan Raspberry Pi dengan kamera cukup dengan menghubungkan kamera dengan port \textit{Camera Serial Interface} (CSI) yang sudah tersedia pada Raspberry Pi. Gambar ~\ref{fig:GambarKameraPi} merupakah hasil foto yang diambil oleh kamera Pi.
+
+\begin{figure} [H]
+    \includegraphics[width=0.85\textwidth, center]{images/Hasil Gambar Kamera Pi.png}
+    \caption{Hasil Foto Kamera Pi}
+    \label{fig:GambarKameraPi}
+\end{figure}
+
+Foto yang diambil oleh kamera akan di proses untuk mengambil nomor plat kendaraan. Pengambilan nomor plat kendaraan menggunakan API(\textit(Aplication Programming Interface)) yang disediakan oleh \textit(platerecognizer.com). Foto yang telah diambil oleh kamera akan dikirim dengan cara mengakses API \textit(platerecognizer.com) yang telah dihubungkan. Setelah berhasil mengakses alamat API, permintaan tersebut akan diteruskan ke server \textit(platerecognizer.com). Jadi, API akan memberitahukan bahwa aplikasi membutuhkan data nomor pelat sesuai gambar yang dikirim. Setelah memproses foto dan menemukan data yang diinginkan, server kembali menghubungi API. Data tersebut berupa nomor plat kendaraan. Selanjutnya, API meneruskan informasi dari server ke aplikasi kita.
 
 % \subsection{Hasil Perancangan Perangkat Lunak}
 
